@@ -21,5 +21,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AnswerOption">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
 
 </resources>

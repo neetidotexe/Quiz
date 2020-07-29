@@ -10,3 +10,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 }
+
+
+object UserId {
+    var userId: String = (System.currentTimeMillis() / 1000L).toString()
+}

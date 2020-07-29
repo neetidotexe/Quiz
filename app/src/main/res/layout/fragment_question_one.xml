@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,34 +10,144 @@
         android:id="@+id/question_one_top_pattern_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_question_one_top_pattern"
+        android:src="@drawable/ic_question_top_pattern"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/question_one_question_sheet_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:src="@drawable/bg_question_sheet"
         android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/bg_question_sheet"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_one_top_pattern_image"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question_one_top_pattern_image" />
 
     <TextView
         android:id="@+id/question_one"
+        style="@style/Question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/Question"
-        android:layout_marginTop="80dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="20dp"
         android:maxLines="4"
         android:scrollbars="vertical"
-        app:layout_constraintStart_toStartOf="@+id/question_one_question_sheet_image"
         app:layout_constraintEnd_toEndOf="@+id/question_one_question_sheet_image"
+        app:layout_constraintStart_toStartOf="@+id/question_one_question_sheet_image"
         app:layout_constraintTop_toTopOf="@+id/question_one_question_sheet_image"
-        tools:text= "How do you judge what should be added in the next version of the app?"/>
+        tools:text="How do you judge what should be added in the next version of the app?" />
+
+    <CheckBox
+        android:id="@+id/answer_one_check_box_one"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="User's feedback"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question_one"/>
+
+    <CheckBox
+        android:id="@+id/answer_one_check_box_two"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="Copy from similar product"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_one_check_box_one"/>
+
+    <CheckBox
+        android:id="@+id/answer_one_check_box_three"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="Data Analysis"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_one_check_box_two"/>
+
+    <CheckBox
+        android:id="@+id/answer_one_check_box_four"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="Personal Feeling"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_one_check_box_three"/>
+
+    <ImageView
+        android:id="@+id/question_one_screen_next_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_home_screen_start_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/question_one_next_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_next_text"
+        app:layout_constraintBottom_toBottomOf="@+id/question_one_screen_next_image"
+        app:layout_constraintEnd_toEndOf="@+id/question_one_screen_next_image"
+        app:layout_constraintStart_toStartOf="@+id/question_one_screen_next_image"
+        app:layout_constraintTop_toTopOf="@+id/question_one_screen_next_image" />
+
+    <ImageView
+        android:id="@+id/question_one_next_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_forward_arrow"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/question_one_screen_next_image"
+        app:layout_constraintEnd_toEndOf="@+id/question_one_screen_next_image"
+        app:layout_constraintTop_toTopOf="@+id/question_one_screen_next_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
