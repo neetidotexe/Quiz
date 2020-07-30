@@ -13,4 +13,9 @@ class QuizRepository {
         return quizNetworkDataSource.getQuestionDetails(userId)
     }
 
+    fun fetchNextQuestionDetails(userId: String , answers : MutableList<Int>) : Single<QuestionResponse>{
+        return quizNetworkDataSource.getNextQuestionDetails(userId , answers)
+    }
+
+
 }

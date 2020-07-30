@@ -18,10 +18,28 @@ class QuizViewModel : ViewModel() {
     val question: LiveData<QuestionResponse>
         get() = _question
 
+    //this is called once to get first question
     @SuppressLint("CheckResult")
     fun fetchQuestionDetails(userId : String){
         compositeDisposable.add(
             quizRepository.fetchQuestionDetails(userId)
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                    {
+                        _question.postValue(it)
+                    },
+                    {
+
+                    }
+                )
+        )
+    }
+
+    //this is called to submit answer and get next question
+    @SuppressLint("CheckResult")
+    fun fetchNextQuestionDetails(userId : String , answers : MutableList<Int>){
+        compositeDisposable.add(
+            quizRepository.fetchNextQuestionDetails(userId,answers)
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                     {
