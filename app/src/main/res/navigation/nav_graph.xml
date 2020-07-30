@@ -14,5 +14,26 @@
     <fragment
         android:id="@+id/questionOneFragment"
         android:name="com.example.quiz.ui.QuestionOneFragment"
-        android:label="QuestionOneFragment" />
+        android:label="QuestionOneFragment" >
+        <action
+            android:id="@+id/action_questionOneFragment_to_questionTwoFragment"
+            app:destination="@id/questionTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionTwoFragment"
+        android:name="com.example.quiz.ui.QuestionTwoFragment"
+        android:label="QuestionTwoFragment">
+        <argument
+            android:name="optionOneSelected"
+            app:argType="boolean" />
+        <argument
+            android:name="optionTwoSelected"
+            app:argType="boolean" />
+        <argument
+            android:name="optionThreeSelected"
+            app:argType="boolean" />
+        <argument
+            android:name="optionFourSelected"
+            app:argType="boolean" />
+    </fragment>
 </navigation>
