@@ -31,3 +31,9 @@ data class AnswerResponse(
     val optionText : String
 )
 
+data class ScoreResponse(
+
+    @SerializedName("score")
+    val finalScore : Int
+)
+

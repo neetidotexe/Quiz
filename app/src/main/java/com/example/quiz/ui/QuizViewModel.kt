@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.quiz.entity.QuestionResponse
+import com.example.quiz.entity.ScoreResponse
 import com.example.quiz.repository.QuizRepository
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -17,6 +18,10 @@ class QuizViewModel : ViewModel() {
     private var _question = MutableLiveData<QuestionResponse>()
     val question: LiveData<QuestionResponse>
         get() = _question
+
+    private var _score = MutableLiveData<ScoreResponse>()
+    val score: LiveData<ScoreResponse>
+        get() = _score
 
     //this is called once to get first question
     @SuppressLint("CheckResult")
@@ -44,6 +49,23 @@ class QuizViewModel : ViewModel() {
                 .subscribe(
                     {
                         _question.postValue(it)
+                    },
+                    {
+
+                    }
+                )
+        )
+    }
+
+    //this is called to get final score
+    @SuppressLint("CheckResult")
+    fun fetchFinalScoreDetails(userId : String , answers : MutableList<Int>){
+        compositeDisposable.add(
+            quizRepository.fetchFinalScoreDetails(userId,answers)
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                    {
+                        _score.postValue(it)
                     },
                     {
 
