@@ -46,11 +46,6 @@ class FinalScoreFragment : Fragment() {
             incorrectAnswerText.text = (5.minus(it.finalScore)).toString()
         })
 
-        closeApp.setOnClickListener {
-
-            exitProcess(0)
-        }
-
         return root
     }
 
