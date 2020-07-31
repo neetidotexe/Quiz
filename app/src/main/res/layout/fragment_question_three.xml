@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -41,77 +40,85 @@
         app:layout_constraintTop_toTopOf="@+id/question_three_question_sheet_image"
         tools:text="How do you judge what should be added in the next version of the app?" />
 
-    <RadioGroup
-        android:id="@+id/answer_three_options"
-        android:layout_width="0dp"
+    <CheckBox
+        android:id="@+id/answer_three_check_box_one"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="User's feedback"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_three">
+        app:layout_constraintTop_toBottomOf="@+id/question_three"/>
 
-        <RadioButton
-            android:id="@+id/answer_three_radio_button_one"
-            style="@style/AnswerOption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bg_answer_option"
-            android:button="@null"
-            android:drawableStart="@drawable/ic_radio_button"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:drawablePadding="12dp"
-            tools:text="User's feedback"/>
+    <CheckBox
+        android:id="@+id/answer_three_check_box_two"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="Copy from similar product"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_three_check_box_one"/>
 
-        <RadioButton
-            android:id="@+id/answer_three_radio_button_two"
-            style="@style/AnswerOption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_answer_option"
-            android:button="@null"
-            android:drawableStart="@drawable/ic_radio_button"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:drawablePadding="12dp"
-            tools:text="Copy from similar product"/>
+    <CheckBox
+        android:id="@+id/answer_three_check_box_three"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="Data Analysis"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_three_check_box_two"/>
 
-        <RadioButton
-            android:id="@+id/answer_three_radio_button_three"
-            style="@style/AnswerOption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_answer_option"
-            android:button="@null"
-            android:drawableStart="@drawable/ic_radio_button"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:drawablePadding="12dp"
-            tools:text="Data Analysis"/>
-
-        <RadioButton
-            android:id="@+id/answer_three_radio_button_four"
-            style="@style/AnswerOption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_answer_option"
-            android:button="@null"
-            android:drawableStart="@drawable/ic_radio_button"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:drawablePadding="12dp"
-            tools:text="Personal Feeling" />
-    </RadioGroup>
+    <CheckBox
+        android:id="@+id/answer_three_check_box_four"
+        style="@style/AnswerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_answer_option"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_radio_button"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawablePadding="12dp"
+        tools:text="Personal Feeling"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_three_check_box_three"/>
 
     <ImageView
         android:id="@+id/question_three_screen_next_image"
