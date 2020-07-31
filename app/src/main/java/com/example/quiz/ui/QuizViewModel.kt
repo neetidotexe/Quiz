@@ -23,6 +23,11 @@ class QuizViewModel : ViewModel() {
     val score: LiveData<ScoreResponse>
         get() = _score
 
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.dispose()
+    }
+
     //this is called once to get first question
     @SuppressLint("CheckResult")
     fun fetchQuestionDetails(userId : String){
@@ -72,10 +77,5 @@ class QuizViewModel : ViewModel() {
                     }
                 )
         )
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        compositeDisposable.dispose()
     }
 }
