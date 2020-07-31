@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "code": 200,
+    "data_property_name": "question",
+    "message": "Question fetched successfully!"
+  },
+  "question": {
+    "id": 0,
+    "text": "Which out of these are fruits?",
+    "answers": [
+      {
+        "id": 0,
+        "text": "Wheat"
+      },
+      {
+        "id": 1,
+        "text": "Rice"
+      },
+      {
+        "id": 2,
+        "text": "Apple"
+      },
+      {
+        "id": 3,
+        "text": "Banana"
+      }
+    ]
+  }
+}

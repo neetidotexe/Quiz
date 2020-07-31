@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "code": 200,
+    "data_property_name": "question",
+    "message": "Question fetched successfully!"
+  },
+  "question": {
+    "id": 1,
+    "text": "Which out of these fall into the category of mammals?",
+    "answers": [
+      {
+        "id": 0,
+        "text": "Whale"
+      },
+      {
+        "id": 1,
+        "text": "Shark"
+      },
+      {
+        "id": 2,
+        "text": "Monkey"
+      },
+      {
+        "id": 3,
+        "text": "Snake"
+      }
+    ]
+  }
+}
