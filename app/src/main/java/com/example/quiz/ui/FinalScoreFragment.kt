@@ -5,23 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 import com.example.quiz.R
-import com.example.quiz.UserId
+import kotlin.system.exitProcess
 
 class FinalScoreFragment : Fragment() {
 
     lateinit var finalScoreText : TextView
     lateinit var correctAnswerText : TextView
     lateinit var incorrectAnswerText : TextView
+    lateinit var closeApp : ImageView
     lateinit var viewModel: QuizViewModel
-    var scoreValue : Int = 0
 
     var passSelectedAnswersOfPreviousQuestion = mutableListOf<Int>()
-    private val selectedAnswersList = mutableListOf<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +45,11 @@ class FinalScoreFragment : Fragment() {
             correctAnswerText.text = it.finalScore.toString()
             incorrectAnswerText.text = (5.minus(it.finalScore)).toString()
         })
+
+        closeApp.setOnClickListener {
+
+            exitProcess(0)
+        }
 
         return root
     }

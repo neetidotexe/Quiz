@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.quiz.R
-import com.example.quiz.UserId
 
 class QuestionFourFragment : Fragment() {
 
@@ -115,32 +115,39 @@ class QuestionFourFragment : Fragment() {
             optionFourId?.let { selectedAnswersList.add(it) }
 
 
-        /*
-        based on the values in selectedAnswersList, add the boolean value true to the option
-        which are used as arguments to be passed to next fragment
-         */
+        if (selectedAnswersList.size == 0) {
+            val toast =
+                Toast.makeText(context, "Please select atleast one answer", Toast.LENGTH_SHORT)
+            toast.show()
+        } else {
 
-        var optionOneSelected = false
-        var optionTwoSelected = false
-        var optionThreeSelected = false
-        var optionFourSelected = false
-        for (i in 0..selectedAnswersList.size - 1) {
-            when (selectedAnswersList.get(i)) {
-                0 -> optionOneSelected = true
-                1 -> optionTwoSelected = true
-                2 -> optionThreeSelected = true
-                3 -> optionFourSelected = true
+            /*
+            based on the values in selectedAnswersList, add the boolean value true to the option
+            which are used as arguments to be passed to next fragment
+             */
+
+            var optionOneSelected = false
+            var optionTwoSelected = false
+            var optionThreeSelected = false
+            var optionFourSelected = false
+            for (i in 0..selectedAnswersList.size - 1) {
+                when (selectedAnswersList.get(i)) {
+                    0 -> optionOneSelected = true
+                    1 -> optionTwoSelected = true
+                    2 -> optionThreeSelected = true
+                    3 -> optionFourSelected = true
+                }
             }
-        }
 
-        val directions =
-            QuestionFourFragmentDirections.actionQuestionFourFragmentToQuestionFiveFragment(
-                optionOneSelected,
-                optionTwoSelected,
-                optionThreeSelected,
-                optionFourSelected
-            )
-        findNavController().navigate(directions)
+            val directions =
+                QuestionFourFragmentDirections.actionQuestionFourFragmentToQuestionFiveFragment(
+                    optionOneSelected,
+                    optionTwoSelected,
+                    optionThreeSelected,
+                    optionFourSelected
+                )
+            findNavController().navigate(directions)
+        }
     }
 }
 

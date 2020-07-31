@@ -1,6 +1,6 @@
 package com.example.quiz.source
 
-import com.example.quiz.UserId
+import com.example.quiz.ui.UserId
 import com.example.quiz.entity.NextQuestionRequest
 import com.example.quiz.entity.QuestionRequest
 import okhttp3.OkHttpClient
