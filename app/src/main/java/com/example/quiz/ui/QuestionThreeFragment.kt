@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.quiz.R
 import com.example.quiz.UserId
 
@@ -64,6 +65,11 @@ class QuestionThreeFragment : Fragment() {
             optionFourId = it.question?.options?.get(3)?.optionId
         })
 
+        //click listener for Next
+        nextQuestion.setOnClickListener {
+            showQuestionFour()
+        }
+
         return root
     }
 
@@ -88,6 +94,54 @@ class QuestionThreeFragment : Fragment() {
         if (optionFourSelected) {
             passSelectedAnswersOfPreviousQuestion.add(3)
         }
+    }
+
+    private fun showQuestionFour() {
+
+        /* based on the answer options checked, add the answer option ids (getting from API)
+        to the mutable list of selectedAnswersList */
+        if (optionOne.isChecked)
+            optionOneId?.let { selectedAnswersList.add(it) }
+
+        if (optionTwo.isChecked)
+            optionTwoId.let {
+                if (it != null) {
+                    selectedAnswersList.add(it)
+                }
+            }
+
+        if (optionThree.isChecked)
+            optionThreeId?.let { selectedAnswersList.add(it) }
+
+        if (optionFour.isChecked)
+            optionFourId?.let { selectedAnswersList.add(it) }
+
+
+        /*
+        based on the values in selectedAnswersList, add the boolean value true to the option
+        which are used as arguments to be passed to next fragment
+         */
+
+        var optionOneSelected = false
+        var optionTwoSelected = false
+        var optionThreeSelected = false
+        var optionFourSelected = false
+        for (i in 0..selectedAnswersList.size - 1) {
+            when (selectedAnswersList.get(i)) {
+                0 -> optionOneSelected = true
+                1 -> optionTwoSelected = true
+                2 -> optionThreeSelected = true
+                3 -> optionFourSelected = true
+            }
+        }
+
+        val directions = QuestionThreeFragmentDirections.actionQuestionThreeFragmentToQuestionFourFragment(
+            optionOneSelected,
+            optionTwoSelected,
+            optionThreeSelected,
+            optionFourSelected
+        )
+        findNavController().navigate(directions)
     }
 
 }
