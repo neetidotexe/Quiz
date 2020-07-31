@@ -2,6 +2,16 @@
 
 This is a small Quiz app that shows 5 multiple choice questions and displays result at the end.
 
+## Visual Preview
+
+Home Screen |  Select Answers
+:-------------------------:|:-------------------------:
+![Alt Text](https://github.com/neetidotexe/Quiz/blob/master/Start%20and%20First%20Question.gif)  |  ![Alt Text](https://github.com/neetidotexe/Quiz/blob/master/selecting%20answers.gif)
+
+Back button and empty answer |  Score
+:-------------------------:|:-------------------------:
+![Alt Text](https://github.com/neetidotexe/Quiz/blob/master/handle%20empty%20answers%20and%20back.gif)|![Alt Text](https://github.com/neetidotexe/Quiz/blob/master/score.gif)
+
 ## Requirements
 
 ### User flow
