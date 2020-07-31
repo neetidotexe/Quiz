@@ -35,5 +35,25 @@
         <argument
             android:name="optionFourSelected"
             app:argType="boolean" />
+        <action
+            android:id="@+id/action_questionTwoFragment_to_questionThreeFragment"
+            app:destination="@id/questionThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionThreeFragment"
+        android:name="com.example.quiz.ui.QuestionThreeFragment"
+        android:label="QuestionThreeFragment">
+        <argument
+            android:name="optionOneSelected"
+            app:argType="boolean" />
+        <argument
+            android:name="optionTwoSelected"
+            app:argType="boolean" />
+        <argument
+            android:name="optionThreeSelected"
+            app:argType="boolean" />
+        <argument
+            android:name="optionFourSelected"
+            app:argType="boolean" />
     </fragment>
 </navigation>
